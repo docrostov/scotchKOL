@@ -8,6 +8,7 @@ const {
     itemAmount,
     myMaxhp,
     myHp,
+    outfit,
     print,
     restoreMp,
     toSlot,
@@ -110,6 +111,7 @@ function ahoyMaties() {
     if (getProperty("choiceAdventure1549") != 1) cliExecute("set choiceAdventure1549 = 1");
     if (getProperty("choiceAdventure1550") != 1) cliExecute("set choiceAdventure1550 = 1");
 
+    outfit("birthday suit");
 }
 
 /**
