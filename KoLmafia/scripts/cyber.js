@@ -3,8 +3,23 @@ const {
     getProperty,
     toFamiliar,
     useFamiliar,
+    haveEffect,
+    toEffect,
+    useSkill,
     cliExecute,
+    equippedItem,
     visitUrl,
+    myMaxhp,
+    toSlot,
+    toInt,
+    myHp,
+    itemAmount,
+    restoreMp,
+    print,
+    abort,
+    equip,
+    toItem,
+    toSlot,
 } = require('kolmafia');
 
 // ---------------------------------------------
