@@ -8,6 +8,7 @@ const {
     itemAmount,
     myMaxhp,
     myHp,
+    myFamiliar,
     outfit,
     print,
     restoreMp,
@@ -38,6 +39,14 @@ const CASTBUFFS = [
     toEffect("Scarysauce"),
     toEffect("Phat Leon's Phat Loot Lyric"),
     toEffect("Minor Invulnerability"),
+    toEffect("Skeletal Warrior"),
+    toEffect("Skeletal Cleric"),
+    toEffect("Skeletal Wizard"),
+    toEffect("Skeletal Rogue"),
+    toEffect("Skeletal Buddy"),
+    toEffect("The Psalm of Pointiness"),
+    toEffect("Scarysauce"),
+    toEffect("Spiky Shell"),
 ];
 
 /**
