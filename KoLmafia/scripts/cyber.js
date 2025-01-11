@@ -262,7 +262,7 @@ function runTurns(turns) {
 
         var preAdvTurns = myTurncount();
         
-        manageEquipment(islandToRun);
+        manageEquipment();
         restoration();
 
         if (!cyberBool) currSnarf+=1;
