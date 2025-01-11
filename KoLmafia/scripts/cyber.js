@@ -67,6 +67,12 @@ const RAWCOMBAT = [
     "if hasskill 7410",             // emit drones
     "skill 7410",
     "endif",
+    "if hasskill 7387",             // polar vortex
+    "skill 7387",
+    "endif",
+    "if hasskill 226",              // perpetrate mild evil
+    "skill 226",
+    "endif",
     "if hasskill 7423",             // parka YR
     "skill 7423",    
     "endif",
@@ -269,7 +275,7 @@ function runTurns(turns) {
         restoration();
 
         if (!cyberBool) currSnarf+=1;
-        if (currSnarf > 587) abort("All done!")
+        if (currSnarf > 587) break;
 
         if (myAdventures() > 0) {
             cyberBool = adv1(toLocation(currSnarf),1);
@@ -323,6 +329,18 @@ function main(cmd) {
 
         runTurns(turnsToRun);
 
+        print();
+        print("----------------------  _+^^*+_    "); 
+        print("- S I C K------------  {       )  ("); 
+        print("---- H A C K -------  { (@)    } f "); 
+        print("------- B R O ------ {:;-/    (_+*-"); 
+        print("------------------- ( /  (    (    "); 
+        print("-------------------  U _/     )    ");  
+        print("--------------------  (      )  _(^");      
+        print("------------------- (      /  (_))_");  
+        print("-------------------(     ,/    (^))");  
+        print("------------------- *+__+*       (_");
+        print();
     }
 
 }
