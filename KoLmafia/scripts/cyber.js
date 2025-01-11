@@ -330,18 +330,18 @@ function main(cmd) {
 
         runTurns(turnsToRun);
 
-        printHtml("<b><p style=\"font-family:'Courier New'\">=======================================</p></b>");
-        printHtml("<b><p style=\"font-family:'Courier New'\">= ----------------------  _+^^*+_     =</p></b>"); 
-        printHtml("<b><p style=\"font-family:'Courier New'\">= - S I C K------------  {       )  ( =</p></b>"); 
-        printHtml("<b><p style=\"font-family:'Courier New'\">= ---- H A C K -------  { (@)    } f  =</p></b>"); 
-        printHtml("<b><p style=\"font-family:'Courier New'\">= ------- B R O ------ {:;-/    (_+*- =</p></b>"); 
-        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- ( /  (    (     =</p></b>"); 
-        printHtml("<b><p style=\"font-family:'Courier New'\">= -------------------  U _/     )     =</p></b>");  
-        printHtml("<b><p style=\"font-family:'Courier New'\">= --------------------  (      )  _(^ =</p></b>");      
-        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- (      /  (_))_ =</p></b>");  
-        printHtml("<b><p style=\"font-family:'Courier New'\">= -------------------(     ,/    (^)) =</p></b>");  
-        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- *+__+*       (_ =</p></b>");
-        printHtml("<b><p style=\"font-family:'Courier New'\">=======================================</p></b>");
+        printHtml("<b><p style=\"font-family:'Courier New'\">=======================================</p></b><br>");
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ----------------------  _+^^*+_     =</p></b><br>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= - S I C K------------  {       )  ( =</p></b><br>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ---- H A C K -------  { (@)    } f  =</p></b><br>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------- B R O ------ {:;-/    (_+*- =</p></b><br>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- ( /  (    (     =</p></b><br>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= -------------------  U _/     )     =</p></b><br>");  
+        printHtml("<b><p style=\"font-family:'Courier New'\">= --------------------  (      )  _(^ =</p></b><br>");      
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- (      /  (_))_ =</p></b><br>");  
+        printHtml("<b><p style=\"font-family:'Courier New'\">= -------------------(     ,/    (^)) =</p></b><br>");  
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- *+__+*       (_ =</p></b><br>");
+        printHtml("<b><p style=\"font-family:'Courier New'\">=======================================</p></b><br>");
     }
 
 }
