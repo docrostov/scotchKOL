@@ -16,6 +16,7 @@ const {
     myTurncount,
     outfit,
     print,
+    printHtml,
     restoreMp,
     toSlot,
     toInt,
@@ -329,18 +330,18 @@ function main(cmd) {
 
         runTurns(turnsToRun);
 
-        print();
-        print("----------------------  _+^^*+_    "); 
-        print("- S I C K------------  {       )  ("); 
-        print("---- H A C K -------  { (@)    } f "); 
-        print("------- B R O ------ {:;-/    (_+*-"); 
-        print("------------------- ( /  (    (    "); 
-        print("-------------------  U _/     )    ");  
-        print("--------------------  (      )  _(^");      
-        print("------------------- (      /  (_))_");  
-        print("-------------------(     ,/    (^))");  
-        print("------------------- *+__+*       (_");
-        print();
+        printHtml("");
+        printHtml("----------------------  _+^^*+_    "); 
+        printHtml("- S I C K------------  {       )  ("); 
+        printHtml("---- H A C K -------  { (@)    } f "); 
+        printHtml("------- B R O ------ {:;-/    (_+*-"); 
+        printHtml("------------------- ( /  (    (    "); 
+        printHtml("-------------------  U _/     )    ");  
+        printHtml("--------------------  (      )  _(^");      
+        printHtml("------------------- (      /  (_))_");  
+        printHtml("-------------------(     ,/    (^))");  
+        printHtml("------------------- *+__+*       (_");
+        printHtml();
     }
 
 }
