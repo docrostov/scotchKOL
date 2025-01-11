@@ -1,5 +1,6 @@
 const {
     abort,
+    adv1,
     cliExecute,
     equip,
     equippedItem,
@@ -9,6 +10,8 @@ const {
     myMaxhp,
     myHp,
     myFamiliar,
+    myAdventures,
+    myTurncount,
     outfit,
     print,
     restoreMp,
@@ -17,9 +20,11 @@ const {
     toItem,
     toEffect,
     toFamiliar,
+    toLocation,
     useFamiliar,
     useSkill,
     visitUrl,
+    xpath,
 } = require('kolmafia');
 
 // ---------------------------------------------
@@ -47,6 +52,34 @@ const CASTBUFFS = [
     toEffect("The Psalm of Pointiness"),
     toEffect("Scarysauce"),
     toEffect("Spiky Shell"),
+];
+
+// This is a simple CCS.
+const RAWCOMBAT = [
+    "if monstername hacker",
+    "if hasskill 7530",             // swoop like a bat
+    "skill 7530",
+    "endif",
+    "if hasskill 7410",             // emit drones
+    "skill 7410",
+    "endif",
+    "if hasskill 7423",             // parka YR
+    "skill 7423",    
+    "endif",
+    "if hasskill 7521",             // dart freekill
+    "skill 7521",
+    "endif",
+    "if hasskill Bowl Straight Up", // item buff
+    "skill Bowl Straight Up",      
+    "endif",
+    "if hascombatitem porquoise-handled sixgun",
+    "use porquoise-handled sixgun",
+    "endif",
+    "attack",
+    "repeat",
+    "endif",
+    "skill 7542",
+    "repeat",
 ];
 
 /**
@@ -148,6 +181,37 @@ function restoration() {
 
 }
 
+
+/**
+ * This function is basically taken from loathers/libram. Specifically,
+ *   getMacroID and the setAutoattack functions. Thanks to Neil & Bean.
+ */
+function setupCombat() {
+    // Set default macro information.
+    var macroName = "cyberrealm";
+    var builtCCS = RAWCOMBAT.join(";");
+
+    // Use an xpath query to look at all macro names.
+    const query = `//select[@name="macroid"]/option[text()="${macroName}"]/@value`;
+    const macroWebpage = visitUrl("account_combatmacros.php");
+    var macroMatches = xpath(macroWebpage, query);
+
+    // Check if the new macro exists
+    if (macroMatches.length === 0) {
+        visitUrl("account_combatmacros.php?action=new");
+        const newMacroText = visitUrl(`account_combatmacros.php?macroid=0&name=${macroName}&macrotext=abort&action=save`);
+        macroMatches = xpath(newMacroText, query);
+    }
+
+    // The autoAttack ID is different from the macro ID; need to add 99 mil!
+    var macroID = parseInt(macroMatches[0],10);
+    var autoAttackID = 99000000 + macroID;
+
+    visitUrl('account_combatmacros.php?action=new');
+    visitUrl('account_combatmacros.php?macroid='+macroID+'&name='+macroName+'&macrotext='+urlEncode(builtCCS)+'&action=save',true, true,);
+    visitUrl('account.php?am=1&action=autoattack&value='+autoAttackID+'&ajax=1');
+}
+
 /**
  * Execute sources for buffs up to a given # of turns.
  * @param {number} turns        # of turns to buff to
@@ -179,6 +243,38 @@ function executeBuffs(turns, buffs) {
             }
         }
     });
+}
+
+function runTurns(turns) {
+    var currSnarf = 585;
+    setupCombat();
+    var turnsToPlay = turns;
+    var cyberBool = true;
+
+    if (turns > myAdventures()) turnsToPlay = myAdventures();
+    
+    const targetTurns = myTurncount() + turnsToPlay;
+
+    for (let i=1; i < turnsToPlay + 1; i++) {
+        // Break out if you've used the turns 
+        if (myTurncount() >= targetTurns) break;
+
+        var preAdvTurns = myTurncount();
+        
+        manageEquipment(islandToRun);
+        restoration();
+
+        if (!cyberBool) currSnarf+=1;
+        if (currSnarf > 587) abort("All done!")
+
+        if (myAdventures() > 0) {
+            cyberBool = adv1(toLocation(currSnarf),1);
+        }
+
+        if (myAdventures() > 0 && preAdvTurns === myTurncount()) i--; 
+        
+        if (itemAmount(toItem("autumn-aton")) > 0)  cliExecute("autumnaton send shadow rift");
+    }
 }
 
 
@@ -220,6 +316,8 @@ function main(cmd) {
         var buffsToSnag = CASTBUFFS;
     
         executeBuffs(turnsToRun, buffsToSnag);
+
+        runTurns(turnsToRun);
 
     }
 
