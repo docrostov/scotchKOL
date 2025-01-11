@@ -330,18 +330,18 @@ function main(cmd) {
 
         runTurns(turnsToRun);
 
-        printHtml("");
-        printHtml("----------------------  _+^^*+_    "); 
-        printHtml("- S I C K------------  {       )  ("); 
-        printHtml("---- H A C K -------  { (@)    } f "); 
-        printHtml("------- B R O ------ {:;-/    (_+*-"); 
-        printHtml("------------------- ( /  (    (    "); 
-        printHtml("-------------------  U _/     )    ");  
-        printHtml("--------------------  (      )  _(^");      
-        printHtml("------------------- (      /  (_))_");  
-        printHtml("-------------------(     ,/    (^))");  
-        printHtml("------------------- *+__+*       (_");
-        printHtml();
+        printHtml("<b><p style=\"font-family:'Courier New'\">=======================================</p></b>");
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ----------------------  _+^^*+_     =</p></b>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= - S I C K------------  {       )  ( =</p></b>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ---- H A C K -------  { (@)    } f  =</p></b>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------- B R O ------ {:;-/    (_+*- =</p></b>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- ( /  (    (     =</p></b>"); 
+        printHtml("<b><p style=\"font-family:'Courier New'\">= -------------------  U _/     )     =</p></b>");  
+        printHtml("<b><p style=\"font-family:'Courier New'\">= --------------------  (      )  _(^ =</p></b>");      
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- (      /  (_))_ =</p></b>");  
+        printHtml("<b><p style=\"font-family:'Courier New'\">= -------------------(     ,/    (^)) =</p></b>");  
+        printHtml("<b><p style=\"font-family:'Courier New'\">= ------------------- *+__+*       (_ =</p></b>");
+        printHtml("<b><p style=\"font-family:'Courier New'\">=======================================</p></b>");
     }
 
 }
