@@ -23,6 +23,7 @@ const {
     toLocation,
     useFamiliar,
     useSkill,
+    urlEncode,
     visitUrl,
     xpath,
 } = require('kolmafia');
