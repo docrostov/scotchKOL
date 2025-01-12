@@ -57,6 +57,7 @@ const CASTBUFFS = [
     toEffect("The Psalm of Pointiness"),
     toEffect("Scarysauce"),
     toEffect("Spiky Shell"),
+    toEffect("Curiosity of Br'er Tarrypin"),
 ];
 
 // This is a simple CCS.
@@ -142,11 +143,6 @@ function ahoyMaties() {
     //   accessory is +5 res vs -1 combat
     if (getProperty("horseryAvailable") === "true") {
         if (getProperty("_horsery") != "pale horse") cliExecute("horsery pale horse");
-    }
-
-    // Properly set up your retrocape.
-    if (getProperty("retroCapeSuperhero") != "vampire" && getProperty("retroCapeWashingInstructions") != "hold") {
-        cliExecute("retrocape vampire hold");
     }
 
     // For simplicity, just use one familiar
@@ -262,6 +258,8 @@ function runTurns(turns) {
     var turnsToPlay = turns;
     var cyberBool = true;
 
+    while (haveEffect("Blue Swayed") < 50 ) cliExecute("try; "+toEffect("Blue Swayed").default);
+
     if (turns > myAdventures()) turnsToPlay = myAdventures();
     
     const targetTurns = myTurncount() + turnsToPlay;
@@ -344,7 +342,7 @@ function main(cmd) {
         // printHtml("<b><p style=\"font-family:'Courier'\">= ------------------- *+__+*       (_ =</p></b><br>");
         // printHtml("<b><p style=\"font-family:'Courier'\">=======================================</p></b><br>");
 
-        printHtml("<b><p style=\"font-family:'Courier new'\"><br>=======================================<br>=&nbsp;----------------------&nbsp;&nbsp;_+^^*+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>=&nbsp;-&nbsp;S&nbsp;I&nbsp;C&nbsp;K------------&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;(&nbsp;=<br>=&nbsp;----&nbsp;H&nbsp;A&nbsp;C&nbsp;K&nbsp;-------&nbsp;&nbsp;{&nbsp;(@)&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;f&nbsp;&nbsp;=<br>=&nbsp;-------&nbsp;B&nbsp;R&nbsp;O&nbsp;------&nbsp;{:;-/&nbsp;&nbsp;&nbsp;&nbsp;(_+*-&nbsp;=<br>=&nbsp;-------------------&nbsp;(&nbsp;/&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>=&nbsp;-------------------&nbsp;&nbsp;U&nbsp;_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>=&nbsp;--------------------&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;_(^&nbsp;=<br>&nbsp;&nbsp;&nbsp;=&nbsp;-------------------&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;(_))_&nbsp;=<br>=&nbsp;-------------------(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,/&nbsp;&nbsp;&nbsp;&nbsp;(^))&nbsp;=<br>=&nbsp;-------------------&nbsp;*+__+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_&nbsp;=<br>=======================================<br></p></b>");
+        printHtml("<b><p style=\"font-family:'Courier new'\"><br>=======================================<br>=&nbsp;----------------------&nbsp;&nbsp;_+^^*+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>=&nbsp;-&nbsp;S&nbsp;I&nbsp;C&nbsp;K------------&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;(&nbsp;=<br>=&nbsp;----&nbsp;H&nbsp;A&nbsp;C&nbsp;K&nbsp;-------&nbsp;&nbsp;{&nbsp;(@)&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;f&nbsp;&nbsp;=<br>=&nbsp;-------&nbsp;B&nbsp;R&nbsp;O&nbsp;------&nbsp;{:;-/&nbsp;&nbsp;&nbsp;&nbsp;(_+*-&nbsp;=<br>=&nbsp;-------------------&nbsp;(&nbsp;/&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>=&nbsp;-------------------&nbsp;&nbsp;U&nbsp;_/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=<br>=&nbsp;--------------------&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;_(^&nbsp;=<br>=&nbsp;-------------------&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;(_))_&nbsp;=<br>=&nbsp;-------------------(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,/&nbsp;&nbsp;&nbsp;&nbsp;(^))&nbsp;=<br>=&nbsp;-------------------&nbsp;*+__+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_&nbsp;=<br>=======================================<br></p></b>");
     }
 
 }
