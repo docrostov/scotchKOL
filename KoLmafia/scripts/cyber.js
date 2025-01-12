@@ -275,8 +275,9 @@ function runTurns(turns) {
         manageEquipment();
         restoration();
 
-        if (!cyberBool) currSnarf+=1;
-        if (currSnarf > 587) break;
+        if (toInt(getProperty("_cyberZone1Turns"))==20) currSnarf=586;
+        if (toInt(getProperty("_cyberZone2Turns"))==20) currSnarf=587;
+        if (toInt(getProperty("_cyberZone3Turns"))==20) break;
 
         if (myAdventures() > 0) {
             cyberBool = adv1(toLocation(currSnarf),1);
