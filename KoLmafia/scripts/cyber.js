@@ -258,7 +258,7 @@ function runTurns(turns) {
     var turnsToPlay = turns;
     var cyberBool = true;
 
-    while (haveEffect("Blue Swayed") < 50 ) cliExecute("try; "+toEffect("Blue Swayed").default);
+    while (haveEffect(toEffect("Blue Swayed")) < 50 ) cliExecute("try; "+toEffect("Blue Swayed").default);
 
     if (turns > myAdventures()) turnsToPlay = myAdventures();
     
