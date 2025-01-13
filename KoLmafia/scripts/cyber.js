@@ -117,10 +117,13 @@ function manageEquipment() {
     checkThenEquip("pants",toItem("pantsgiving"));
     checkThenEquip("acc1",toItem("mafia thumb ring"));
     checkThenEquip("acc2",toItem("Retrospecs"));
-    checkThenEquip("acc3",toItem("Everfull Dart Holster"));
+    checkThenEquip("acc3",toItem("retro floppy disk"));
 
-    // Equip your Peace Turkey, if it isn't equipped
-    if (myFamiliar() != toFamiliar("Peace Turkey")) {
+    // Equip your Peace Turkey or Grey Goose, if it isn't equipped
+    if (toInt(getProperty("gooseDronesRemaining")) == 0) {
+        useFamiliar(toFamiliar("Grey Goose"));
+    } 
+    else {
         useFamiliar(toFamiliar("Peace Turkey"));
     }
 
@@ -133,6 +136,11 @@ function manageEquipment() {
     if (haveEffect(toEffect("Everything Looks Red")) < 1)
         checkThenEquip("acc3",toItem("Everfull Dart Holster"));
 
+    // Adds an extra 1 each fight, worth 60/day, what the shit that's good lol
+    checkThenEquip("familiar",toItem("familiar-in-the-middle wrapper"));
+
+    // 
+    if (myEnthronedFamiliar() != toFamiliar("Warbear Drone")) enthroneFamiliar(toFamiliar("Warbear Drone"));
 }
 
 /**
@@ -256,7 +264,6 @@ function runTurns(turns) {
     var currSnarf = 585;
     setupCombat();
     var turnsToPlay = turns;
-    var cyberBool = true;
 
     while (haveEffect(toEffect("Blue Swayed")) < 50 ) cliExecute("try; "+toEffect("Blue Swayed").default);
 
