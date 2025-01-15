@@ -121,12 +121,24 @@ function manageEquipment() {
     checkThenEquip("acc2",toItem("Retrospecs"));
     checkThenEquip("acc3",toItem("retro floppy disk"));
 
-    // Equip your Peace Turkey or Grey Goose, if it isn't equipped
+    // Equip your Peace Turkey or Grey Goose, if it isn't equipped. Because mafia 
+    //   cannot detect items attached to terrarium familiars, I'm equipping 
+    //   leashes when swapping them into the terrarium.
     if (toInt(getProperty("gooseDronesRemaining")) == 0) {
-        useFamiliar(toFamiliar("Grey Goose"));
+        if (myFamiliar() == toFamiliar ("Grey Goose")) 
+            checkThenEquip("familiar",toItem("familiar-in-the-middle wrapper"));
+        else {
+            checkThenEquip("familiar",toItem("filthy child leash"));
+            useFamiliar(toFamiliar("Grey Goose"));
+        }
     } 
     else {
-        useFamiliar(toFamiliar("Peace Turkey"));
+        if (myFamiliar() == toFamiliar ("Peace Turkey")) 
+            checkThenEquip("familiar",toItem("familiar-in-the-middle wrapper"));
+        else {
+            checkThenEquip("familiar",toItem("filthy child leash"));
+            useFamiliar(toFamiliar("Peace Turkey"));
+        }
     }
 
     // Equip your extinguisher if it still has fuel
