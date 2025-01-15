@@ -125,16 +125,14 @@ function manageEquipment() {
     //   cannot detect items attached to terrarium familiars, I'm equipping 
     //   leashes when swapping them into the terrarium.
     if (toInt(getProperty("gooseDronesRemaining")) == 0) {
-        if (myFamiliar() == toFamiliar ("Grey Goose")) 
-            checkThenEquip("familiar",toItem("familiar-in-the-middle wrapper"));
+        if (myFamiliar() == toFamiliar ("Grey Goose")) print("goooooooose");
         else {
             checkThenEquip("familiar",toItem("filthy child leash"));
             useFamiliar(toFamiliar("Grey Goose"));
         }
     } 
     else {
-        if (myFamiliar() == toFamiliar ("Peace Turkey")) 
-            checkThenEquip("familiar",toItem("familiar-in-the-middle wrapper"));
+        if (myFamiliar() == toFamiliar ("Peace Turkey")) print ("turkeyyyyyyyy");
         else {
             checkThenEquip("familiar",toItem("filthy child leash"));
             useFamiliar(toFamiliar("Peace Turkey"));
