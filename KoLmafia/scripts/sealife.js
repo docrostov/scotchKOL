@@ -12,7 +12,7 @@ const {
     toItem,
     toSlot,
     useFamiliar,
-    useItem,
+    use,
     useSkill,
     visitUrl,
 } = require('kolmafia');
@@ -53,7 +53,7 @@ if (inSea) takeStorage(1, toItem("mer-kin cheatsheet"));
 // Use relevant stuff
 if (inSea) useItem(toItem("mer-kin wordquiz"));
 if (myLevel() > 19) useItem(toItem("wardrobe-o-matic"));
-useItem(toItem("TakerSpace letter of Marque"));
+use(1,toItem("TakerSpace letter of Marque"));
 
 // Things needed active for later stuff
 useFamiliar(toFamiliar("Chest Mimic"));
@@ -76,8 +76,8 @@ visitUrl("inventory.php?action=shower");
 // Set the choice then use the goodies sack
 cliExecute("set choiceAdventure1565=1");
 visitUrl("council.php");
-useItem(toItem("letter from King Ralph XI"));
-useItem(toItem("pork elf goodies sack"));
+use(toItem("letter from King Ralph XI"));
+use(toItem("pork elf goodies sack"));
 cliExecute("sell * baconstone; sell * porquoise; sell * hamethyst;");
 
 // Some CLIEXes
