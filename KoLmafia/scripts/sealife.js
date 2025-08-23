@@ -76,8 +76,8 @@ visitUrl("inventory.php?action=shower");
 // Set the choice then use the goodies sack
 cliExecute("set choiceAdventure1565=1");
 visitUrl("council.php");
-use(toItem("letter from King Ralph XI"));
-use(toItem("pork elf goodies sack"));
+use(1, toItem("letter from King Ralph XI"));
+use(1, toItem("pork elf goodies sack"));
 cliExecute("sell * baconstone; sell * porquoise; sell * hamethyst;");
 
 // Some CLIEXes
