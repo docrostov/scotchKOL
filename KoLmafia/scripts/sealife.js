@@ -38,22 +38,24 @@ function checkThenEquip(slot,item) {
 var inSea = myPath().id == 55;
 
 // Start with pulls
-if (inSea) takeStorage(1, toItem("mer-kin scholar mask"));
-if (inSea) takeStorage(1, toItem("mer-kin scholar tailpiece"));
-if (inSea) takeStorage(1, toItem("mer-kin gladiator mask"));
-if (inSea) takeStorage(1, toItem("mer-kin gladiator tailpiece"));
-if (inSea) takeStorage(1, toItem("shark jumper"));
-if (inSea) takeStorage(1, toItem("scale-mail underwear"));
-if (inSea) takeStorage(1, toItem("sea cowboy hat"));
-if (inSea) takeStorage(1, toItem("sea chaps"));
-// if (inSea) takeStorage(1, toItem("sea cowbell"));
-if (inSea) takeStorage(1, toItem("mer-kin wordquiz"));
-if (inSea) takeStorage(1, toItem("mer-kin cheatsheet"));
+if (inSea && itemAmount(toItem("sea chaps")) > 0) {
+    takeStorage(1, toItem("mer-kin scholar mask"));
+    takeStorage(1, toItem("mer-kin scholar tailpiece"));
+    takeStorage(1, toItem("mer-kin gladiator mask"));
+    takeStorage(1, toItem("mer-kin gladiator tailpiece"));
+    takeStorage(1, toItem("shark jumper"));
+    takeStorage(1, toItem("scale-mail underwear"));
+    takeStorage(1, toItem("sea cowboy hat"));
+    takeStorage(1, toItem("sea chaps"));
+    takeStorage(1, toItem("sea cowbell"));
+    takeStorage(1, toItem("mer-kin wordquiz"));
+    takeStorage(1, toItem("mer-kin cheatsheet"));
+}
 
 // Use relevant stuff
-if (inSea) useItem(toItem("mer-kin wordquiz"));
-if (myLevel() > 19) useItem(toItem("wardrobe-o-matic"));
-use(1,toItem("TakerSpace letter of Marque"));
+if (inSea && itemAmount(toItem("mer-kin wordquiz")) > 0) use(1, toItem("mer-kin wordquiz"));
+if (myLevel() > 19) use(1, toItem("wardrobe-o-matic"));
+use(1, toItem("TakerSpace letter of Marque"));
 
 // Things needed active for later stuff
 useFamiliar(toFamiliar("Chest Mimic"));
@@ -100,6 +102,11 @@ cliExecute("create 1 wet shower radio");
 
 // Equip a thing 
 checkThenEquip("acc3",toItem("Flash Liquidizer Ultra Dousing Accessory"));
+
+// Setting up cool-ass counters and stuff. Check the site for how-to when adding more.
+//   -> https://wiki.kolmafia.us/index.php?title=Counters
+
+cliExecute("counters add 0 ")
 
 // // Buffs to cast
 // const CASTBUFFS = [
