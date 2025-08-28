@@ -38,7 +38,7 @@ function checkThenEquip(slot,item) {
 var inSea = myPath().id == 55;
 
 // Start with pulls
-if (inSea && itemAmount(toItem("sea chaps")) > 0) {
+if (inSea && itemAmount(toItem("sea chaps")) < 0) {
     takeStorage(1, toItem("mer-kin scholar mask"));
     takeStorage(1, toItem("mer-kin scholar tailpiece"));
     takeStorage(1, toItem("mer-kin gladiator mask"));
@@ -56,6 +56,8 @@ if (inSea && itemAmount(toItem("sea chaps")) > 0) {
 if (inSea && itemAmount(toItem("mer-kin wordquiz")) > 0) use(1, toItem("mer-kin wordquiz"));
 if (myLevel() > 19) use(1, toItem("wardrobe-o-matic"));
 use(1, toItem("TakerSpace letter of Marque"));
+use(1, toItem("Newbiesport&trade; tent"));
+use(1, toItem("astral six-pack"));
 
 // Things needed active for later stuff
 useFamiliar(toFamiliar("Chest Mimic"));
@@ -94,11 +96,13 @@ cliExecute("leprecondo furnish padded,laptop,retro,workout");
 
 // Create stuff
 cliExecute("create 3 septapus charm");
+cliExecute("create 1 wheel of camembert");
 cliExecute("create 1 Spooky VHS Tape");
 cliExecute("create 1 Flash Liquidizer Ultra Dousing Accessory");
 cliExecute("create 1 pro skateboard");
 cliExecute("create 1 spitball");
 cliExecute("create 1 wet shower radio");
+cliExecute("teatree shake");
 
 // Equip a thing 
 checkThenEquip("acc3",toItem("Flash Liquidizer Ultra Dousing Accessory"));
@@ -106,7 +110,8 @@ checkThenEquip("acc3",toItem("Flash Liquidizer Ultra Dousing Accessory"));
 // Setting up cool-ass counters and stuff. Check the site for how-to when adding more.
 //   -> https://wiki.kolmafia.us/index.php?title=Counters
 
-cliExecute("counters add 0 ")
+cliExecute("counters add 0 rufusphone! hiero16.gif")
+cliExecute("counters add 7 busk! prisberet.gif")
 
 // // Buffs to cast
 // const CASTBUFFS = [
