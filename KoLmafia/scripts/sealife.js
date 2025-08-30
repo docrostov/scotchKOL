@@ -38,7 +38,7 @@ function checkThenEquip(slot,item) {
 var inSea = myPath().id == 55;
 
 // Start with pulls
-if (inSea && itemAmount(toItem("sea chaps")) < 0) {
+if (inSea && itemAmount(toItem("sea chaps")) < 1) {
     takeStorage(1, toItem("mer-kin scholar mask"));
     takeStorage(1, toItem("mer-kin scholar tailpiece"));
     takeStorage(1, toItem("mer-kin gladiator mask"));
@@ -77,13 +77,6 @@ visitUrl("campground.php?action=workshed");
 visitUrl("inv_use.php?which=3&whichitem=11257");
 visitUrl("inventory.php?action=shower");
 
-// Set the choice then use the goodies sack
-cliExecute("set choiceAdventure1565=1");
-visitUrl("council.php");
-use(1, toItem("letter from King Ralph XI"));
-use(1, toItem("pork elf goodies sack"));
-cliExecute("sell * baconstone; sell * porquoise; sell * hamethyst;");
-
 // Some CLIEXes
 cliExecute("breakfast");
 cliExecute("find Sheriff pistol");
@@ -107,11 +100,40 @@ cliExecute("teatree shake");
 // Equip a thing 
 checkThenEquip("acc3",toItem("Flash Liquidizer Ultra Dousing Accessory"));
 
+// Cast some buffs
+cliExecute("cast 12 seal clubbing frenzy");
+cliExecute("cast 12 sauce contemplation");
+cliExecute("cast 12 patience of the tortoise");
+cliExecute("cast 12 moxie of the mariachi");
+cliExecute("cast 12 manicotti meditation");
+cliExecute("cast 12 disco aerobics");
+cliExecute("cast 1 summon kokomo reward pass");
+cliExecute("cast 6 walberg's dim bulb");
+cliExecute("cast 6 disco leer");
+cliExecute("cast 6 springy fusilli");
+cliExecute("cast 4 leash of linguini");
+cliExecute("cast 6 singer's faithful ocelot");
+cliExecute("cast 6 hide from seekers");
+cliExecute("cast 6 smooth movement");
+cliExecute("cast 1 Rest upside down");
+cliExecute("cast 6 ballad of richie thingfinder");
+cliExecute("cast 6 chorale of companionship");
+cliExecute("cast 6 fat leon's phat loot lyric");
+cliExecute("cast 6 sonata of sneakiness");
+cliExecute("cast 1 Cincho: Party Soundtrack");
+
 // Setting up cool-ass counters and stuff. Check the site for how-to when adding more.
 //   -> https://wiki.kolmafia.us/index.php?title=Counters
 
 cliExecute("counters add 0 rufusphone! hiero16.gif")
 cliExecute("counters add 7 busk! prisberet.gif")
+
+// Set the choice then use the goodies sack
+cliExecute("set choiceAdventure1565=1");
+visitUrl("council.php");
+use(1, toItem("letter from King Ralph XI"));
+use(1, toItem("pork elf goodies sack"));
+cliExecute("sell * baconstone; sell * porquoise; sell * hamethyst;");
 
 // // Buffs to cast
 // const CASTBUFFS = [
