@@ -45,11 +45,13 @@ if (inSea && itemAmount(toItem("sea chaps")) < 1) {
     takeStorage(1, toItem("mer-kin gladiator tailpiece"));
     takeStorage(1, toItem("shark jumper"));
     takeStorage(1, toItem("scale-mail underwear"));
-    takeStorage(1, toItem("sea cowboy hat"));
-    takeStorage(1, toItem("sea chaps"));
-    takeStorage(1, toItem("sea cowbell"));
+    // takeStorage(1, toItem("sea cowboy hat"));
+    // takeStorage(1, toItem("sea chaps"));
+    // takeStorage(1, toItem("sea cowbell"));
     takeStorage(1, toItem("mer-kin wordquiz"));
     takeStorage(1, toItem("mer-kin cheatsheet"));
+    takeStorage(1, toItem("mer-kin sneakmask"));
+    takeStorage(1, toItem("Great Wolf's Beastly Trousers"));
 }
 
 // Use relevant stuff
@@ -85,6 +87,7 @@ cliExecute("find Sheriff moustache");
 cliExecute("photobooth effect wild");
 cliExecute("mayam resonance stinkbomb");
 cliExecute("mayam rings fur meat yam clock");
+cliExecute("mayam rings chair wood wall yam");
 cliExecute("leprecondo furnish padded,laptop,retro,workout");
 
 // Create stuff
